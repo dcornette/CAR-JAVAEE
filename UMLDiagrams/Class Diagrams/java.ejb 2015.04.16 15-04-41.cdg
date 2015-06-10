@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.ejb">
+  <ClassDiagramComponents>
+    <Class name="AbstractFacade" package="ejb" visibility="public" isAbstract="true" xPosition="340.0" yPosition="20.0">
+      <Fields>
+        <Field name="entityClass" type="Class&lt;T&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Class&lt;T&gt;" name="entityClass"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="protected" isAbstract="true"/>
+        <Method name="create" returnType="void" visibility="public">
+          <Argument type="T" name="entity"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public">
+          <Argument type="T" name="entity"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="T" name="entity"/>
+        </Method>
+        <Method name="find" returnType="T" visibility="public">
+          <Argument type="Object" name="id"/>
+        </Method>
+        <Method name="findAll" returnType="List&lt;T&gt;" visibility="public"/>
+        <Method name="findRange" returnType="List&lt;T&gt;" visibility="public">
+          <Argument type="int[]" name="range"/>
+        </Method>
+        <Method name="count" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BooksEJBImpl" package="ejb" visibility="public" xPosition="76.0" yPosition="401.0">
+      <Fields>
+        <Field name="em" type="EntityManager" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="protected"/>
+        <Method name="initBookDB" returnType="void" visibility="public"/>
+        <Method name="getBookFromTitle" returnType="List&lt;Books&gt;" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="getBookFromAuthor" returnType="List&lt;Books&gt;" visibility="public">
+          <Argument type="String" name="author"/>
+        </Method>
+        <Method name="getAuthors" returnType="List" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="OrdersEJBImpl" package="ejb" visibility="public" xPosition="549.0" yPosition="456.0">
+      <Fields>
+        <Field name="em" type="EntityManager" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntityManager" returnType="EntityManager" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Interface name="BooksEJB" package="ejb" visibility="public" xPosition="26.0" yPosition="29.0">
+      <Methods>
+        <Method name="initBookDB" returnType="void" visibility="public"/>
+        <Method name="getBookFromTitle" returnType="List&lt;Books&gt;" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="getBookFromAuthor" returnType="List&lt;Books&gt;" visibility="public">
+          <Argument type="String" name="author"/>
+        </Method>
+        <Method name="getAuthors" returnType="List" visibility="public"/>
+        <Method name="create" returnType="void" visibility="package">
+          <Argument type="Books" name="books"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="package">
+          <Argument type="Books" name="books"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="package">
+          <Argument type="Books" name="books"/>
+        </Method>
+        <Method name="find" returnType="Books" visibility="package">
+          <Argument type="Object" name="id"/>
+        </Method>
+        <Method name="findAll" returnType="List&lt;Books&gt;" visibility="package"/>
+        <Method name="findRange" returnType="List&lt;Books&gt;" visibility="package">
+          <Argument type="int[]" name="range"/>
+        </Method>
+        <Method name="count" returnType="int" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="OrdersEJB" package="ejb" visibility="public" xPosition="617.0" yPosition="52.0">
+      <Methods>
+        <Method name="create" returnType="void" visibility="package">
+          <Argument type="Orders" name="orders"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="package">
+          <Argument type="Orders" name="orders"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="package">
+          <Argument type="Orders" name="orders"/>
+        </Method>
+        <Method name="find" returnType="Orders" visibility="package">
+          <Argument type="Object" name="id"/>
+        </Method>
+        <Method name="findAll" returnType="List&lt;Orders&gt;" visibility="package"/>
+        <Method name="findRange" returnType="List&lt;Orders&gt;" visibility="package">
+          <Argument type="int[]" name="range"/>
+        </Method>
+        <Method name="count" returnType="int" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ejb.BooksEJBImpl" target="ejb.BooksEJB"/>
+    <IsRelation name="is" source="ejb.OrdersEJBImpl" target="ejb.AbstractFacade"/>
+    <IsRelation name="is" source="ejb.BooksEJBImpl" target="ejb.AbstractFacade"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ejb.OrdersEJBImpl" target="ejb.OrdersEJB"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

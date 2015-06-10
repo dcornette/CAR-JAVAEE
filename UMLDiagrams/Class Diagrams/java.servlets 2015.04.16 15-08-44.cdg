@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.servlets">
+  <ClassDiagramComponents>
+    <Class name="AddCartServlet" package="servlets" visibility="public" xPosition="20.0" yPosition="122.0">
+      <Fields>
+        <Field name="booksEJBImpl" type="BooksEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Book" package="servlets" visibility="public" xPosition="660.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="doPost" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DisplayCartServlet" package="servlets" visibility="public" xPosition="619.0" yPosition="713.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DisplayOrdersServlet" package="servlets" visibility="public" xPosition="548.0" yPosition="504.0">
+      <Fields>
+        <Field name="ordersEJBImpl" type="OrdersEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GetAuthorsServlet" package="servlets" visibility="public" xPosition="663.0" yPosition="323.0">
+      <Fields>
+        <Field name="booksEJBImpl" type="BooksEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="IndexServlet" package="servlets" visibility="public" xPosition="1131.0" yPosition="339.0">
+      <Fields>
+        <Field name="booksEJBImpl" type="BooksEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InitBookServlet" package="servlets" visibility="public" xPosition="1356.0" yPosition="160.0">
+      <Fields>
+        <Field name="booksEJBImpl" type="BooksEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewBookServlet" package="servlets" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="booksEJBImpl" type="BooksEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+        <Method name="doPost" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RemoveCartServlet" package="servlets" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="booksEJBImpl" type="BooksEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="toOrderServlet" package="servlets" visibility="public" xPosition="73.0" yPosition="713.0">
+      <Fields>
+        <Field name="ordersEJBImpl" type="OrdersEJB" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="doGet" returnType="void" visibility="protected">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="booksEJBImpl" source="servlets.IndexServlet" target="servlets.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="booksEJBImpl" source="servlets.InitBookServlet" target="servlets.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="booksEJBImpl" source="servlets.AddCartServlet" target="servlets.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="booksEJBImpl" source="servlets.GetAuthorsServlet" target="servlets.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="booksEJBImpl" source="servlets.RemoveCartServlet" target="servlets.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="booksEJBImpl" source="servlets.NewBookServlet" target="servlets.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

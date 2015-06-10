@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.entity">
+  <ClassDiagramComponents>
+    <Class name="Books" package="entity" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="bTitle" type="String" visibility="private"/>
+        <Field name="bAuthor" type="String" visibility="private"/>
+        <Field name="bYear" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="bTitle"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="bTitle"/>
+          <Argument type="String" name="bAuthor"/>
+          <Argument type="int" name="bYear"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getBTitle" returnType="String" visibility="public"/>
+        <Method name="setBTitle" returnType="void" visibility="public">
+          <Argument type="String" name="bTitle"/>
+        </Method>
+        <Method name="getBAuthor" returnType="String" visibility="public"/>
+        <Method name="setBAuthor" returnType="void" visibility="public">
+          <Argument type="String" name="bAuthor"/>
+        </Method>
+        <Method name="getBYear" returnType="int" visibility="public"/>
+        <Method name="setBYear" returnType="void" visibility="public">
+          <Argument type="int" name="bYear"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Orders" package="entity" visibility="public" xPosition="512.0" yPosition="58.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="number" type="Integer" visibility="private"/>
+        <Field name="books" type="List&lt;Books&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="number"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumber" returnType="Integer" visibility="public"/>
+        <Method name="setNumber" returnType="void" visibility="public">
+          <Argument type="Integer" name="number"/>
+        </Method>
+        <Method name="getBooks" returnType="List&lt;Books&gt;" visibility="public"/>
+        <Method name="setBooks" returnType="void" visibility="public">
+          <Argument type="List&lt;Books&gt;" name="books"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="books" source="entity.Orders" target="entity.Books" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Books&gt;"/>
+    <UseRelation source="entity.Orders" target="entity.Books" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
